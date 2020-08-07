@@ -1,0 +1,17 @@
+name: Test Workflow
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          service: tenant
+          new_version: 1.0.0
+          services_path: ./example-services.json
+      - run: cat example-services.json

@@ -1,0 +1,8 @@
+[
+  {
+    "type": "grpc",
+    "name": "tenant",
+    "roles": ["roles/firebase.developAdmin"],
+    "version": "latest"
+  }
+]

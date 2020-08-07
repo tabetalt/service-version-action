@@ -1,0 +1,19 @@
+name: Service Bump Version Action
+author: Tabetalt.no AS
+description: Updates services versions in services.json.
+branding:
+  icon: upload-cloud
+  color: orange
+inputs:
+    service:
+        description: 'Service name'
+        required: true
+    new_version:
+        description: 'New version'
+        required: true
+    services_path:
+        description: 'Location of the service file'
+        required: false
+runs:
+    using: 'node12'
+    main: 'dist/index.js'
