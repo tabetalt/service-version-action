@@ -41,7 +41,7 @@ export class UpdateVersion {
   }
 
   save(services: ServiceConfig[]) {
-    return fs.writeFileSync(this.servicesFilePath, JSON.stringify(services));
+    return fs.writeFileSync(this.servicesFilePath, JSON.stringify(services, null, 2));
   }
 
   parseFile() {
