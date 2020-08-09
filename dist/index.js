@@ -444,7 +444,7 @@ class UpdateVersion {
         });
     }
     save(services) {
-        return fs.writeFileSync(this.servicesFilePath, JSON.stringify(services));
+        return fs.writeFileSync(this.servicesFilePath, JSON.stringify(services, null, 2));
     }
     parseFile() {
         return JSON.parse(fs.readFileSync(this.servicesFilePath, 'utf-8'));
