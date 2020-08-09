@@ -394,8 +394,8 @@ const core = __webpack_require__(470);
 const updateVersion_1 = __webpack_require__(824);
 const args = {
     service: core.getInput('service', { required: true }),
-    servicesFilePath: core.getInput('new_version', { required: true }),
-    newVersion: core.getInput('services_path'),
+    servicesFilePath: core.getInput('services_path', { required: true }),
+    newVersion: core.getInput('new_version'),
 };
 new updateVersion_1.UpdateVersion(args).updateAndSave();
 //# sourceMappingURL=main.js.map
