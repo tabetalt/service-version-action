@@ -1,0 +1,22 @@
+name: Update dist files
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  update_dist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn
+      - run: yarn build
+      - name: Commit files
+        run: |
+          git config --local user.email "paytron@tabetalt.no"
+          git config --local user.name "Mr. Louie Paytron"
+          git commit -m "chore: Update dist files" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
